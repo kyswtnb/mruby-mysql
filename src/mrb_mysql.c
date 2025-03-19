@@ -130,19 +130,19 @@ bind_params(mrb_state* mrb, MYSQL_STMT* stmt, int argc, mrb_value* argv, int col
       break;
     case MRB_TT_FIXNUM:
       params[i].buffer_type = MYSQL_TYPE_LONG;
-      params[i].buffer = &mrb_fixnum(argv[i]);
+      params[i].buffer = mrb_fixnum(argv[i]);
       break;
     case MRB_TT_FLOAT:
       params[i].buffer_type = MYSQL_TYPE_FLOAT;
-      params[i].buffer = &mrb_float(argv[i]);
+      params[i].buffer = mrb_float(argv[i]);
       break;
     case MRB_TT_TRUE:
       params[i].buffer_type = MYSQL_TYPE_TINY;
-      params[i].buffer = &mrb_fixnum(argv[i]);
+      params[i].buffer = mrb_fixnum(argv[i]);
       break;
     case MRB_TT_FALSE:
       params[i].buffer_type = MYSQL_TYPE_TINY;
-      params[i].buffer = &mrb_fixnum(argv[i]);
+      params[i].buffer = mrb_fixnum(argv[i]);
       break;
     default:
       return "invalid argument";
